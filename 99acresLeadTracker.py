@@ -39,7 +39,7 @@ def send_telegram_message(text: str):
         "text": text,
     }
 
-    response = requests.post(url, json=payload)
+    response = requests.post(url, json=payload, timeout=20)
 
     if response.status_code == 200:
         print("✅ Telegram message sent")
@@ -293,6 +293,7 @@ def fetch_latest_99acres_email():
     )
 
     mail.select("inbox")
+    mail.noop()
 
     # Fetch unread emails
     status, messages = mail.search(
