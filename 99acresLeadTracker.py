@@ -389,5 +389,5 @@ if __name__ == "__main__":
 
             print("❌ ERROR:", str(e))
 
-        # Check every 30 seconds
-        time.sleep(30)
+        # Check every 60 seconds
+        time.sleep(60)
